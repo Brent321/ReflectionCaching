@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReflectionCaching", "ReflectionCaching\ReflectionCaching.csproj", "{53FDCA57-70BF-4D2A-8116-A6A8D7811B4C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationExtentions", "ValidationExtentions\ValidationExtentions.csproj", "{82C8059D-CF7D-4A3E-95CF-9B682087AD13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cache", "Cache\Cache.csproj", "{0548EE40-53B8-4EE1-A8E9-F3CA1841A1E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationExtentions.Test", "ValidationExtentions.Test\ValidationExtentions.Test.csproj", "{C15CD374-9243-4DE6-9C21-5CC85E106169}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{53FDCA57-70BF-4D2A-8116-A6A8D7811B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53FDCA57-70BF-4D2A-8116-A6A8D7811B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53FDCA57-70BF-4D2A-8116-A6A8D7811B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53FDCA57-70BF-4D2A-8116-A6A8D7811B4C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0548EE40-53B8-4EE1-A8E9-F3CA1841A1E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0548EE40-53B8-4EE1-A8E9-F3CA1841A1E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0548EE40-53B8-4EE1-A8E9-F3CA1841A1E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0548EE40-53B8-4EE1-A8E9-F3CA1841A1E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82C8059D-CF7D-4A3E-95CF-9B682087AD13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82C8059D-CF7D-4A3E-95CF-9B682087AD13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82C8059D-CF7D-4A3E-95CF-9B682087AD13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82C8059D-CF7D-4A3E-95CF-9B682087AD13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C15CD374-9243-4DE6-9C21-5CC85E106169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C15CD374-9243-4DE6-9C21-5CC85E106169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C15CD374-9243-4DE6-9C21-5CC85E106169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C15CD374-9243-4DE6-9C21-5CC85E106169}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

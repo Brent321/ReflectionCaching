@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Reflection;
 using ReflectionCaching.Models;
+using ReflectionCachingLibrary;
 
 namespace ReflectionCaching
 {
@@ -10,21 +11,21 @@ namespace ReflectionCaching
     {
         private static readonly ConcurrentDictionary<string, Tuple<PropertyInfo[], RequiredAttribute[]>> _reflectionCache = new();
         private static readonly ConcurrentDictionary<string, PropertyInfo[]> _reflectionCache2 = new();
-        private static long _repetitions = 1000000;
-        private static List<string> _messages;
+        private static readonly long _repetitions = 1_000_000;
+        private static List<string>? _messages;
 
         static void Main()
         {
             Person person = new();
             Stopwatch sw = Stopwatch.StartNew();
             RunRepetitions(ValidateWithoutCache);
-            Console.WriteLine("Without Cache:\t\t" + sw.Elapsed.TotalSeconds + "ms");
+            Console.WriteLine("Without Cache:\t\t" + sw.Elapsed.TotalSeconds + "s");
             sw.Restart();
             RunRepetitions(ValidateWithCache_WithAttributes);
-            Console.WriteLine("With Cache with attributes:\t" + sw.Elapsed.TotalSeconds + "ms");
+            Console.WriteLine("With Cache with attributes:\t" + sw.Elapsed.TotalSeconds + "s");
             sw.Restart();
             RunRepetitions(ValidateWithCache_OnlyProperties);
-            Console.WriteLine("With Cache only properties:\t" + sw.Elapsed.TotalSeconds + "ms");
+            Console.WriteLine("With Cache only properties:\t" + sw.Elapsed.TotalSeconds + "s");
         }
 
         private static void RunRepetitions(Func<object, IEnumerable<string>> method)
@@ -32,6 +33,7 @@ namespace ReflectionCaching
             for (int i = 0; i < _repetitions; i++)
             {
                 Person person = new();
+                person.Validate()
                 method(person);
             }
         }
@@ -71,18 +73,22 @@ namespace ReflectionCaching
             var messages = new List<string>();
             var cached = _reflectionCache.GetOrAdd(obj.GetType().ToString(), type =>
             {
-                PropertyInfo[] properties = obj.GetType().GetProperties();
-                RequiredAttribute[] attributes = new RequiredAttribute[properties.Length];
+                var properties = obj.GetType().GetProperties();
+                var attributes = new RequiredAttribute[properties.Length];
                 for (int i = 0; i < properties.Length; i++)
                 {
-                    attributes[i] = properties[i].GetCustomAttribute<RequiredAttribute>();
+                    var attr = properties[i].GetCustomAttribute<RequiredAttribute>();
+                    if (attr != null)
+                    {
+                        attributes[i] = attr;
+                    }
                 }
 
                 return Tuple.Create(properties, attributes);
             });
 
-            PropertyInfo[] properties = cached.Item1;
-            RequiredAttribute[] attributes = cached.Item2;
+            var properties = cached.Item1;
+            var attributes = cached.Item2;
             for (int i = 0; i < properties.Length; i++)
             {
                 if (attributes[i] != null)
