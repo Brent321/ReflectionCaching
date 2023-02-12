@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
-namespace ValidationExtentions
+namespace ValidationExtensions
 {
     public static class ExtentionMethods
     {

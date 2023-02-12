@@ -1,4 +1,4 @@
-﻿namespace ValidationExtentions
+﻿namespace ValidationExtensions
 {
     public interface IValidateable
     {

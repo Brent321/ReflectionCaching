@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationExtentions", "ValidationExtentions\ValidationExtentions.csproj", "{82C8059D-CF7D-4A3E-95CF-9B682087AD13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationExtensions", "ValidationExtentions\ValidationExtensions.csproj", "{82C8059D-CF7D-4A3E-95CF-9B682087AD13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationExtentions.Test", "ValidationExtentions.Test\ValidationExtentions.Test.csproj", "{C15CD374-9243-4DE6-9C21-5CC85E106169}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationExtensions.Test", "ValidationExtentions.Test\ValidationExtensions.Test.csproj", "{C15CD374-9243-4DE6-9C21-5CC85E106169}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationExtensions.Benchmark", "ExtentionMethods.BenchmarkTest\ValidationExtensions.Benchmark.csproj", "{8B1D3E04-A943-4263-8EE8-66EB331564FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C15CD374-9243-4DE6-9C21-5CC85E106169}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C15CD374-9243-4DE6-9C21-5CC85E106169}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C15CD374-9243-4DE6-9C21-5CC85E106169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1D3E04-A943-4263-8EE8-66EB331564FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1D3E04-A943-4263-8EE8-66EB331564FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1D3E04-A943-4263-8EE8-66EB331564FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1D3E04-A943-4263-8EE8-66EB331564FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

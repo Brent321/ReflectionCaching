@@ -1,6 +1,6 @@
-using ReflectionCaching.Models;
+using ValidationExtensions.Test.Models;
 
-namespace ValidationExtentions.Test
+namespace ValidationExtensions.Test
 {
     public class RequiredAttributeValidationTests
     {

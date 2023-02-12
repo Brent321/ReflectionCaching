@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using ValidationExtentions;
 
-namespace ReflectionCaching.Models
+namespace ValidationExtensions.Test.Models
 {
-    internal class Person: IValidateable
+    public class Person: IValidateable
     {
         [Required]
         public string? FirstName { get; set; }
