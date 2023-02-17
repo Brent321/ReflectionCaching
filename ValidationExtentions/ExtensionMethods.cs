@@ -41,5 +41,24 @@ namespace ValidationExtensions
             }
             return messages;
         }
+        
+        public static List<string> ValidateSlow(this IValidateable obj)
+        {
+            var messages = new List<string>();
+            var properties = obj.GetType().GetProperties();
+            foreach (PropertyInfo property in properties)
+            {
+                RequiredAttribute? requiredAttribute = property.GetCustomAttribute<RequiredAttribute>();
+                if (requiredAttribute != null)
+                {
+                    object? value = property.GetValue(obj);
+                    if (value == null)
+                    {
+                        messages.Add($"{property.Name} not set!");
+                    }
+                }
+            }
+            return messages;
+        }
     }
 }

@@ -16,7 +16,14 @@ namespace ExtensionMethods.BenchmarkTest
                 person.Validate();
             }
             sw.Stop();
-            Console.WriteLine(sw.ElapsedMilliseconds);
+            Console.WriteLine("Validation with cache: \t\t" + sw.ElapsedMilliseconds + "ms");
+            sw.Restart();
+            for (int i = 0; i < repetitions; i++)
+            {
+                person.ValidateSlow();
+            }
+            sw.Stop();
+            Console.WriteLine("Validation without cache: \t" + sw.ElapsedMilliseconds + "ms");
         }
     }
 }
